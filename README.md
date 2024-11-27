@@ -1,40 +1,58 @@
-# Timer Assessment Challenge 🕒
+# Full Stack Timer Challenge Application
 
-Welcome to this unique technical assessment! You'll be building something interesting while being timed - but we won't tell you exactly what until you're ready to start.
+## Project Overview
+A full-stack web application that tracks and displays the time taken to complete a development challenge, with advanced timer functionality.
 
-## Important: Read Before Starting
+## Features
+- Real-time timer tracking
+- GitHub API fork time integration
+- Pause and resume functionality
+- Responsive design
+- Database time logging
 
-1. **Preparation**
-   - Make sure you have a development environment ready
-   - Have a GitHub account
-   - Have a Vercel account free tier (or equivalent deployment platform)
-   - Block out adequate time - you'll need to complete this in one session
+## Tech Stack
+- **Frontend**: React.js
+- **Backend**: Node.js, Express.js
+- **Database**: MongoDB
+- **Deployment**: Vercel (Frontend), Render (Backend)
 
-2. **Starting the Assessment**
-   - Fork this repository ONLY when you're ready to start
-   - The moment you fork is your official start time
-   - After forking, run:
-     ```bash
-     python decrypt.py
-     ```
-   - This will create your instruction files
+## Prerequisites
+- Node.js
+- MongoDB
+- GitHub Account
+- Vercel/Render Account
 
-3. **What You'll Need**
-   - Knowledge of full-stack development
-   - Database experience
-   - API integration experience
-   - Deployment experience
+## Installation
 
-4. **Submission**
-   - You'll submit via email to pankajv@exargen.com
-   - Include specific screenshots (details in decrypted instructions)
-   - Include deployment URL
-   - Include your repository URL
+### Clone Repository
+```bash
+git clone https://github.com/arpitkasaudhan/fs-assessment.git
+cd fs-assessment
+```
 
-## Ready?
-1. Fork this repository
-2. Clone your fork
-3. Run decrypt.py
-4. Follow the revealed instructions
+### Backend Setup
+```bash
+cd backend
+npm install
+npm start
+```
 
-Good luck! 🚀
+### Frontend Setup
+```bash
+cd frontend
+npm install
+npm start
+```
+
+### Environment Variables
+Create `.env` files in backend with:
+- `MONGODB_URI`
+- `GITHUB_TOKEN`
+- `PORT`
+- `FRONTEND_URL`
+- `GITHUB_USERNAME`
+
+## Deployment
+- Frontend: Vercel
+- Backend: Render
+- Database: MongoDB Atlas
