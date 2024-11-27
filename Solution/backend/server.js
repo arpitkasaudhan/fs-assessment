@@ -13,9 +13,22 @@ connectDB();
 
 const app = express();
 
+// Define allowed origins
+const allowedOrigins = [
+  'https://fs-assessment-taupe.vercel.app', // First allowed frontend URL
+  'https://fs-assessment-c6x0gslqs-arpit-kasaudhan-s-projects.vercel.app', // Second allowed frontend URL
+];
+
 // Middleware
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+  origin: (origin, callback) => {
+    // Check if the origin is in the allowed list
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true); // Allow the origin
+    } else {
+      callback(new Error(`Origin ${origin} not allowed by CORS`)); // Reject the origin
+    }
+  },
 }));
 app.use(bodyParser.json());
 
@@ -27,7 +40,7 @@ app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).json({ 
     message: 'Something went wrong!',
-    error: err.message 
+    error: err.message,
   });
 });
 
