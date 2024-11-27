@@ -2,7 +2,7 @@
 
 ## Project Information
 - **Name**: Arpit Kasaudhan
-- **Email**: [Your Email]
+- **Email**: [kasaudhanarpit37@gmail.com]
 - **Repository URL**: https://github.com/arpitkasaudhan/fs-assessment
 - **Deployed Application URL**: 
   - Frontend: https://fs-assessment-psi.vercel.app/
@@ -72,8 +72,7 @@ const AssessmentSchema = new mongoose.Schema({
 2. Deployment complexities
 3. Synchronizing frontend and backend timer logic
 
-### Screenshots
-[Attach screenshots of your application]
+
 
 ## Checklist
 - [x] Backend API implemented
