@@ -4,7 +4,6 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const connectDB = require('./config/db');
 const assessmentRoutes = require('./routes/assessment');
-const path = require('path');
 
 // Load environment variables
 dotenv.config();
@@ -14,22 +13,14 @@ connectDB();
 
 const app = express();
 
-// Middleware for CORS
+// Middleware
 app.use(cors({
   origin: process.env.FRONTEND_URL || 'http://localhost:5173',
 }));
 app.use(bodyParser.json());
 
-// API routes
+// Routes
 app.use('/api', assessmentRoutes);
-
-// Serve static files from the `dist` folder
-app.use(express.static(path.join(__dirname, 'dist')));
-
-// Catch-all route to serve frontend for unmatched routes
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
-});
 
 // Error handling middleware
 app.use((err, req, res, next) => {
